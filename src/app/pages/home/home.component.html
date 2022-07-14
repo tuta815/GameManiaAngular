@@ -1,0 +1,32 @@
+<div class="carrossel" id="carrossel">
+    <img src="img/mobile920.jpg" alt="Banner mobile">
+    <img src="img/banner_lol.png" alt="Banner Lol">
+    <img src="img/black.jpg" alt="Banner black friday">
+</div>
+<!-- <div class="banner">
+    <div class="container-grid posicao-texto">
+        <div class="texto-banner">
+            <h1>Liga game mania</h1><br>
+            <a href="">Inscreva-se</a>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <h2 class="text-center">Destaques</h2>
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let dp of productData;index as i">
+            <div class="productbox" *ngIf="i<4">
+                <img src="{{dp.foto}}" />
+                <h3>{{dp.titulo}}</h3>
+                <p>{{dp.preco | currency:'BRL'}}</p>
+                <p>{{dp.descricao}}</p>
+                <a class="btn_comprar" [routerLink]="['/comprar',dp.id]">Comprar <i class="bi bi-bag"></i></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="botaoHome mt-4">
+        <a routerLink="destaques" class="botaoHomeMais mt-3"> + PRODUTOS <i class="bi bi-arrow-right"></i></a>
+    </div>
+</div>
